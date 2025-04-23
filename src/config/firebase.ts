@@ -18,16 +18,16 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const analytics = getAnalytics(app);
 
 // Initialize Analytics conditionally
-// let analytics: Analytics | null = null;
-// if (typeof window !== 'undefined') {
-//   // Only initialize analytics on the client side
-//   isSupported().then(supported => {
-//     if (supported) {
-//     }
-//   });
-// }
+let analytics: Analytics | null = null;
+if (typeof window !== 'undefined') {
+  // Only initialize analytics on the client side
+  isSupported().then(supported => {
+    analytics = getAnalytics(app);
+    if (supported) {
+    }
+  });
+}
 
 export { app, db, analytics }; 
