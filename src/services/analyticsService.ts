@@ -48,6 +48,7 @@ export const trackEvent = (
  */
 export const trackPageView = (
   pageName: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   pageParams?: Record<string, any>
 ): void => {
   trackEvent(EventName.PageView, {
@@ -63,7 +64,9 @@ export const trackPageView = (
  */
 export const trackButtonClick = (
   buttonName: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   category: EventCategory = EventCategory.Engagement,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   additionalParams?: Record<string, any>
 ): void => {
   trackEvent(EventName.ButtonClick, {

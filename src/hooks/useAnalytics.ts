@@ -17,6 +17,7 @@ export const useAnalytics = () => {
    */
   const logEvent = useCallback((
     eventName: string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     eventParams?: Record<string, any>
   ) => {
     trackEvent(eventName, eventParams);
@@ -27,6 +28,7 @@ export const useAnalytics = () => {
    */
   const logPageView = useCallback((
     pageName: string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     pageParams?: Record<string, any>
   ) => {
     trackPageView(pageName, pageParams);
@@ -38,6 +40,7 @@ export const useAnalytics = () => {
   const logButtonClick = useCallback((
     buttonName: string,
     category: EventCategory = EventCategory.Engagement,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     additionalParams?: Record<string, any>
   ) => {
     trackButtonClick(buttonName, category, additionalParams);
@@ -60,6 +63,7 @@ export const useAnalytics = () => {
   const logUserEngagement = useCallback((
     engagementType: string,
     engagementValue: number | string,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     additionalParams?: Record<string, any>
   ) => {
     trackEvent('user_engagement', {

@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode, useEffect } from 'react';
-import { trackPageView, trackExternalLinkClick, EventCategory } from '../services/analyticsService';
+import { trackPageView, trackExternalLinkClick } from '../services/analyticsService';
 
 interface AnalyticsWrapperProps {
   children: ReactNode;

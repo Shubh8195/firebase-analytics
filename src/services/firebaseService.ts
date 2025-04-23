@@ -84,6 +84,7 @@ export const updateDocument = async <T extends DocumentData>(
 ) => {
   try {
     const docRef = doc(db, collectionName, docId);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     await updateDoc(docRef, data as any);
     return true;
   } catch (error) {

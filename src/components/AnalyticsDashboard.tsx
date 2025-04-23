@@ -6,6 +6,7 @@ import { useAnalytics } from '../hooks/useAnalytics';
 type AnalyticsEvent = {
   name: string;
   timestamp: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   params: Record<string, any>;
 };
 
