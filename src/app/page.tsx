@@ -15,9 +15,8 @@ const AnalyticsWrapper = dynamic(() => import("@/components/AnalyticsWrapper"), 
 
 // Use dynamic import for the analytics dashboard (development only)
 const AnalyticsDashboard = dynamic(() => 
-  process.env.NODE_ENV === 'development' 
-    ? import("../components/AnalyticsDashboard") 
-    : Promise.resolve(() => null),
+  import("../components/AnalyticsDashboard"), 
+    // : Promise.resolve(() => null),
   { ssr: false }
 );
 
